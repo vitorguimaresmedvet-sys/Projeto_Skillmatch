@@ -45,3 +45,39 @@ const listaVagas = [
     modalidade: "Híbrido",
   },
 ];
+
+// 2. Classes (Com iniciais maiúsculas para evitar conflito de escopo)
+// `Vaga` representa o modelo de uma vaga (RF09). Usamos classes para demonstrar POO.
+class Vaga {
+  constructor(cargo, salario, requisitos, modalidade, id = null) {
+    this.id = id;
+    this.cargo = cargo;
+    this.salario = salario;
+    this.requisitos = requisitos;
+    this.modalidade = modalidade;
+  }
+}
+
+// Classe simples para representar o candidato (objeto de domínio - RF01).
+class Candidato {
+  constructor(nome, idade, area, habilidades, experienciaMeses) {
+    this.nome = nome;
+    this.idade = idade;
+    this.area = area;
+    this.habilidades = habilidades;
+    this.experienciaMeses = experienciaMeses;
+  }
+}
+
+// Exemplo de herança (RF10): VagaFrontEnd estende Vaga e adiciona `nivel`.
+class VagaFrontEnd extends Vaga {
+  constructor(cargo, empresa, requisitos, salario, modalidade, nivel) {
+    super(cargo, salario, requisitos, modalidade);
+    this.empresa = empresa;
+    this.nivel = nivel;
+  }
+  // Método que demonstra o uso de `this` (RF11).
+  exibirNivel() {
+    return `Nivel da vaga: ${this.nivel}`;
+  }
+}
