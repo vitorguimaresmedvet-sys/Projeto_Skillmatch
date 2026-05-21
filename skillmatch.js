@@ -251,3 +251,19 @@ const contarAnalise = criarContadorDeAnalises();
     recomendacaoVaga(melhorVaga.vaga, melhorVaga.resultadoVaga);
   });
 })();
+function recomendacaoVaga(vaga, resultadoVaga) {
+  if (resultadoVaga >= 80) {
+    console.log("Recomendação: O candidato é altamente recomendado para esta vaga.");
+  } else if (resultadoVaga >= 50) {
+    console.log("Recomendação: O candidato é recomendado para esta vaga, mas pode precisar de desenvolvimento em algumas áreas.");
+  } else {
+    console.log("Recomendação: O candidato não atende a maioria dos requisitos para esta vaga.");
+  }
+}
+
+
+// / Função que demonstra o uso de callback (RF12).
+function finalizarAnalise(nomeCandidato, callback) {
+  console.log("Análise finalizada.");
+  callback(nomeCandidato);
+}
