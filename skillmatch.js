@@ -186,3 +186,40 @@ function buscarVagasSimuladas() {
     setTimeout(() => resolve(listaVagas), 2000);
   });
 }
+// Função assíncrona que executa a análise das vagas para um candidato.
+// Usa `await` para esperar o carregamento simulado das vagas e demonstra o fluxo
+// de processamento principal (RF14). Também usa o closure `contarAnalise()` para
+// numerar as análises realizadas (RF13).
+async function executarAnalise(candidato) {
+  // Carrega as vagas (simulação de requisição)
+  const vagasCarregadas = await buscarVagasSimuladas();
+
+  const numeroAnalise = contarAnalise();
+  console.log(`Análise nº ${numeroAnalise} para ${candidato.nome} foi executada!`);
+
+  const _originalConsoleLog = console.log;
+  if (SILENT) console.log = function () {};
+
+  if (PRINT_PER_VAGA) console.log("Comparando o candidato com todas as vagas disponíveis:");
+
+  const resultadosVagas = vagasCarregadas.map((vaga, index) => {
+    if (PRINT_PER_VAGA) {
+      console.log("=======================================");
+      console.log(`Vaga ${index + 1} de ${vagasCarregadas.length}`);
+      console.log(`Empresa: ${vaga.empresa}`);
+      console.log(`Cargo: ${vaga.cargo}`);
+    }
+
+    const resultadoVaga = avaliarCandidato(candidato, vaga, false);
+    return { vaga, resultadoVaga };
+  });
+
+  if (SILENT) console.log = _originalConsoleLog;
+
+  const melhorVaga = resultadosVagas.reduce((melhor, atual) => {
+    return atual.resultadoVaga > melhor.resultadoVaga ? atual : melhor;
+  }, resultadosVagas[0]);
+
+  console.log("=======================================");
+  return melhorVaga;
+}
