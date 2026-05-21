@@ -100,3 +100,11 @@ if (!SILENT) {
     console.log("---------------------------------------");
   });
 }
+// 4. Criação do objeto (instância do candidato) — exemplo preenchido (RF01).
+const novoCandidato = new Candidato(
+  "Carlos Pereira",
+  36,
+  "Desenvolvimento Front-End",
+  ["HTML", "CSS", "JavaScript"],
+  24,
+);
