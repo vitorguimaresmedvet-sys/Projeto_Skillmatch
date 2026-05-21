@@ -108,3 +108,19 @@ const novoCandidato = new Candidato(
   ["HTML", "CSS", "JavaScript"],
   24,
 );
+
+console.log(
+  `Candidato: ${novoCandidato.nome}, ${novoCandidato.idade} anos, área: ${novoCandidato.area}, habilidades: ${novoCandidato.habilidades.join(", ")}, experiência: ${novoCandidato.experienciaMeses} meses.`,
+);
+
+// Função utilitária para aguardar um tempo (retorna Promise) — usada para simular latência.
+function aguardar(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+// Simula o carregamento das vagas (RF14). Isso demonstra Promise + setTimeout.
+function buscarVagasSimuladas() {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(listaVagas), 2000);
+  });
+}
