@@ -81,3 +81,22 @@ class VagaFrontEnd extends Vaga {
     return `Nivel da vaga: ${this.nivel}`;
   }
 }
+
+// // console.log(listaVagas[0]);
+// Mostrar listagem de vagas (true = suprimir listagem inicial)
+const SILENT = false;
+// Controla se os detalhes por vaga devem ser impressos durante a avaliação
+const PRINT_PER_VAGA = false;
+if (!SILENT) {
+  console.log("---------------------------------------");
+  console.log("Vagas disponíveis:");
+  console.log("---------------------------------------");
+  listaVagas.forEach((vaga) => {
+    console.log(` EMPRESA: ${vaga.empresa}`);
+    console.log(` CARGO:   ${vaga.cargo} (ID: ${vaga.id})`);
+    console.log(` SALÁRIO: R$ ${vaga.salario.toLocaleString("pt-BR")},00`);
+    console.log(` MODELO:  ${vaga.modalidade}`);
+    console.log(` REQUISITOS ORIGINAIS: ${vaga.requisitos.join(", ")}`);
+    console.log("---------------------------------------");
+  });
+}
