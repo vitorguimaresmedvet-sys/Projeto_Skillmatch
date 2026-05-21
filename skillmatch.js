@@ -223,3 +223,31 @@ async function executarAnalise(candidato) {
   console.log("=======================================");
   return melhorVaga;
 }
+
+// Closure que mantém um contador privado de quantas análises foram executadas (RF13).
+function criarContadorDeAnalises() {
+  let total = 0; // variável privada ao closure
+  return function () {
+    total += 1; // incrementa a cada chamada
+    return total; // retorna o total atual
+  };
+}
+
+const contarAnalise = criarContadorDeAnalises();
+
+
+// IIFE (immediately-invoked function expression) assíncrona para iniciar o fluxo
+// principal do script: inicia a análise do candidato usando as funções implementadas.
+(async () => {
+  console.log(`Iniciando análise de ${novoCandidato.nome} para as vagas disponíveis...`);
+  const melhorVaga = await executarAnalise(novoCandidato);
+
+  finalizarAnalise(novoCandidato.nome, (nome) => {
+    console.log(
+      `Notificação: análise de ${nome} concluída. Melhor vaga: ${melhorVaga.vaga.cargo} na empresa ${melhorVaga.vaga.empresa}, com ${melhorVaga.resultadoVaga.toFixed(2)}% dos requisitos atendidos.`,
+    );
+    // opcional: mostrar logs detalhados da melhor vaga
+    avaliarCandidato(novoCandidato, melhorVaga.vaga, true);
+    recomendacaoVaga(melhorVaga.vaga, melhorVaga.resultadoVaga);
+  });
+})();
