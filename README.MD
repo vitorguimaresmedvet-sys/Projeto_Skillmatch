@@ -41,3 +41,20 @@ O modelo Cliente-Servidor é a estrutura de *“design”* de *“software”* q
 - Servidor: É uma máquina de alta performance configurada para processar requisições, armazenar bases de dados e devolver as respostas solicitadas. 
 
 A comunicação ocorre através do protocolo *“HTTP/HTTPS”*, onde o cliente envia uma *“Request”* (requisição) e o servidor processa e devolve uma *<i>Response</i>* (resposta) contendo o *“status”* da operação e os dados necessários. (Nota: No *“SkillMatch”* *“JS”*, simulamos o tempo de resposta dessa arquitetura utilizando funções assíncronas).
+
+### **<u>3. Declaração de Variáveis: Diferenças entre *“Var”*, *“Let”* e *“Const”*</u>**
+No ecossistema moderno do *“JavaScript”* (*“ES6+”*), entender o escopo das variáveis é crucial para evitar *“bugs”* de memória e vazamento de dados:
+- *“var”*: Possui escopo de função ou global. Ela sofre *“hoisting”* (o interpretador "eleva" a declaração para o topo antes da execução), o que permite que ela seja acessada antes de ser declarada em alguns casos, retornando *“undefined”*. Permite reatribuição e redeclaração, sendo descontinuada no desenvolvimento moderno por segurança.
+- *“let”*: Introduzida para resolver os problemas do *“var”*. Possui escopo de bloco (só existe dentro das chaves `{ }` onde foi criada). Permite que o valor seja reatribuído ao longo do código, mas não permite a redeclaração de uma variável com o mesmo nome no mesmo escopo.
+- *“const”*: Também possui escopo de bloco. Diferencia-se do *“let”* porque seu valor é imutável após a inicialização (não permite reatribuição). É a escolha ideal para armazenar funções, classes, objetos ou *“arrays”* cuja referência na memória deve permanecer fixa.
+
+---
+
+## **<u>Como Executar o Projeto</u>**
+Por se tratar de um simulador construído em *“JavaScript”* puro voltado para testes lógicos, este projeto não necessita do *“Node.js”* ou de servidores locais instalados. Você pode executá-lo diretamente no *“Console”* do seu navegador (que funciona como um ambiente *“REPL”*): 
+
+1. Abra o navegador como por exemplo, Google Chrome, ou outro que preferir.
+2. Abra a ferramenta de desenvolvedor pressionando “F12” ou o atalho Ctrl + Shift + J (Windows/Linux) ou similar em *“Mac OS”*.
+3. Clique na aba *“Console”*.
+4. Copie todo o código contido no arquivo `skillmatch.js` deste repositório.
+5. Cole o código no terminal do *“Console”* e pressione “Enter” para ver o relatório de compatibilidade rodar em tempo real.
