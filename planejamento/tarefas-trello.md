@@ -1,3 +1,5 @@
 ### **<u>Planejamento e Organização do Projeto</u>**
 
 Para melhor compreensão do projeto e do funcionamento do *“workflow”* de uma empresa de tecnologia, foi instituído o modelo organizacional do *“Kanban”* utilizando a ferramenta *“Trello”*. A divisão dos quadros ficou estruturada da seguinte forma: A Fazer; Em Andamento; *“Backlog”*; *“Checklist”* Projeto; e Finalizado.
+
+O primeiro quadro tem como objetivo orientar os participantes sobre as tarefas individuais de cada um. O seguinte demonstra quais ações estão sendo executadas naquele exato momento. Em seguida, o *“Backlog”* funciona como uma caixa de entrada para o planejamento de demandas futuras. O quadro subsequente, denominado *“Checklist”* Projeto, foi inspirado no conceito de *“double check”* oriundo da aviação comercial e possui a função vital de reafirmar, revisar e conferir minuciosamente os critérios de aceitação das tarefas já executadas antes de sua homologação. Por fim, a coluna de Finalizados expõe as entregas totalmente concluídas.
