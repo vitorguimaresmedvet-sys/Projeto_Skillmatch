@@ -131,27 +131,27 @@ function avaliarCandidato(candidatoObjeto, vagaObjeto, exibirLogs = true) {
   if (exibirLogs) {
     console.log("---------------------------------------");
     console.log(
-      `Habilidades correspondentes: ${habilidadesCorrespondentes.join(", ")} `,
+      `Habilidades correspondentes: ${habilidadesCorrespondentes.join(", ")}`,
     );
 
     // Mostra quais requisitos foram atendidos e quantos são.
     console.log(
-      Requisitos atendidos: ${habilidadesCorrespondentes.join(", ")} que corresponde ao total de ${requisitosAtendidos} requisitos atendidos.,
+      `Requisitos atendidos: ${habilidadesCorrespondentes.join(", ")} que corresponde ao total de ${requisitosAtendidos} requisitos atendidos.`,
     );
     console.log(
-      Total de requisitos da vaga: ${vagaObjeto.requisitos.join(", ")} (${totalRequisitos} requisitos no total).,
+      `Total de requisitos da vaga: ${vagaObjeto.requisitos.join(", ")} (${totalRequisitos} requisitos no total).`,
     );
     console.log(
-      Habilidades atendidas: ${habilidadesCorrespondentes.join(", ")} (${requisitosAtendidos} requisitos atendidos).,
+      `Habilidades atendidas: ${habilidadesCorrespondentes.join(", ")} (${requisitosAtendidos} requisitos atendidos).`,
     );
     // Mostra o que falta para o candidato atingir a vaga (RF05).
     console.log(
-      Habilidades não encontradas: ${habilidadesFaltantes.join(", ") || "Nenhuma!"},
+      `Habilidades não encontradas: ${habilidadesFaltantes.join(", ") || "Nenhuma!"}`,
     );
-    console.log(Classificação: ${classificacao});
+    console.log(`Classificação: ${classificacao}`);
     console.log("---------------------------------------");
     console.log(
-      Recomendações de estudo: priorize estudar ${habilidadesFaltantes.join(", ") || "Nenhuma!"}, pois esta(s) é(são) a(s) habilidade(s) que você ainda não possui e que é(são) requisitada(s) para a vaga. Focar nela(s) pode aumentar suas chances de conseguir a vaga!,
+      `Recomendações de estudo: priorize estudar ${habilidadesFaltantes.join(", ") || "Nenhuma!"}, pois esta(s) é(são) a(s) habilidade(s) que você ainda não possui e que é(são) requisitada(s) para a vaga. Focar nela(s) pode aumentar suas chances de conseguir a vaga!`,
     );
     console.log("---------------------------------------");
   }
@@ -159,7 +159,6 @@ function avaliarCandidato(candidatoObjeto, vagaObjeto, exibirLogs = true) {
   // Retorna apenas o percentual (valor numérico) para uso em comparações.
   return percentualAtendimento;
 }
-
 
 
 // 4. Criação do objeto (instância do candidato) — exemplo preenchido (RF01).
